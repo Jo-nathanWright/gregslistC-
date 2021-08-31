@@ -7,7 +7,7 @@ using gregslist.Models;
 namespace gregslist.Controllers
 {
     [ApiController]
-    
+
     [Route("/api/[controller]")]
     public class CarsController : ControllerBase
     {
@@ -25,6 +25,21 @@ namespace gregslist.Controllers
         IEnumerable<Car> cars = _carsService.Get();
 
         return Ok(cars);
+      }
+        catch (Exception err)
+        {
+        return BadRequest(err.Message);
+      }
+    }
+
+    [HttpGet("{id}")]
+
+    public ActionResult<Car> Get(string id)
+    {
+        try
+        {
+        Car found = _carsService.Get(id);
+        return Ok(found);
       }
         catch (Exception err)
         {
