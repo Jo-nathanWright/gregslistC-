@@ -30,6 +30,7 @@ namespace gregslistC_
 
             services.AddControllers();
             services.AddTransient<CarsService>();
+            services.AddTransient<HousesService>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "gregslistC_", Version = "v1" });
