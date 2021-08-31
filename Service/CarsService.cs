@@ -19,5 +19,11 @@ namespace gregslist.Service
           }
           return found;
         }
+
+        internal Car Create(Car newCar)
+        {
+      FakeDB.Cars.Add(newCar);
+      return newCar;
+    }
     }
 }

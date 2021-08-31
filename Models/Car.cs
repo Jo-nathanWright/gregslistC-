@@ -18,7 +18,7 @@ namespace gregslist.Models
         public int Price { get; set; }
         public string Description { get; set; }
         public string ImgUrl { get; set; }
-        public Car(string make, string modal, int year, int price, string description, string imgUrl)
+        public Car(string make, string modal, int year, int price, string description = "Not Provided", string imgUrl = "https://via.placeholder.com/420/0000FF/808080")
         {
           Make = make;
           Modal = modal;
