@@ -61,5 +61,20 @@ namespace gregslist.Controllers
         return BadRequest(err.Message);
       }
     }
+
+    [HttpDelete("{id}")]
+
+    public ActionResult<String> Delete(string id)
+    {
+        try
+        {
+        _carsService.Delete(id);
+        return Ok("Successfully Deleted That Car");
+      }
+        catch (Exception err)
+        {
+            return BadRequest(err.Message);
+        }
+    } 
   }
 }
